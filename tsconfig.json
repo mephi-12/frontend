@@ -11,7 +11,8 @@
       "@pages/*": ["./pages/*"],
       "@entity/*": ["./entity/*"],
     },
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "outDir": "dist"
   },
   "include": ["src"]
 }

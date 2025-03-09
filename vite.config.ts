@@ -16,5 +16,8 @@ export default defineConfig({
         '@pages': resolve(__dirname, 'src/pages'),
         '@entity': resolve(__dirname, 'src/entity'),
     },
-},
+  },
+  build: {
+    outDir: 'dist'
+  }
 })
