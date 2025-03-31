@@ -10,6 +10,24 @@ export const units: Unit[] = [
         preview: backpackIcon,
         url: '/satchel-cryptosystem/common',
         rating: 10,
+    },
+    {
+        name: 'satchel-cryptosystem-backdoor',
+        author: 'Иванов М.А.',
+        title: 'Бекдор в ранцевой криптосистеме',
+        description: 'desc',
+        preview: backpackIcon,
+        url: '/satchel-cryptosystem-backdoor/common',
+        rating: 10,
+    },
+    {
+        name: 'elgamal-cryptosystem',
+        author: 'Иванов М.А.',
+        title: 'Криптосистема Эльгамаля',
+        description: 'desc',
+        preview: backpackIcon,
+        url: '/elgamal-cryptosystem/common',
+        rating: 10,
     }
 ]
 

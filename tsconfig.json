@@ -2,6 +2,10 @@
   "compilerOptions": {
     "target": "ESNext",
     "jsx": "react-jsx",
+    "module": "ESNext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "baseUrl": "src",
     "paths": {
@@ -9,7 +13,7 @@
       "@features/*": ["./features/*"],
       "@shared/*": ["./shared/*"],
       "@pages/*": ["./pages/*"],
-      "@entity/*": ["./entity/*"],
+      "@entity/*": ["./entity/*"]
     },
     "moduleResolution": "node",
     "outDir": "dist"

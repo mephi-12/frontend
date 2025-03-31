@@ -2,11 +2,11 @@ export type ServerProblem = {
     id: string
     createdAt: string
     state: string
-    power: BigInt | null,
+    power: bigint | null,
     type: string
     message: boolean[]
-    lightBackpack: BigInt[]
-    omega: BigInt | null
+    lightBackpack: bigint[]
+    omega: bigint | null
 }
 
 export type Problem = {
@@ -20,31 +20,31 @@ export type Problem = {
 
 export type Solve = {
     id: string
-    power: Number
+    power: number
     type: string
     message: boolean[]
-    lightBackpack: Number[]
-    omega: Number
-    hardBackpack: Number[]
-    encodedMessage: Number
+    lightBackpack: number[]
+    omega: number
+    hardBackpack: number[]
+    encodedMessage: number
     decodedMessage: boolean[]
-    module: Number
-    reverseOmega: Number
+    module: number
+    reverseOmega: number
 }
 
 export type SolveResponse = {
     id: string
     createdAt: string
     state: string
-    power: BigInt
+    power: bigint
     type: string
     message: boolean[]
-    lightBackpack: BigInt[]
-    omega: BigInt
-    hardBackpack: BigInt[]
-    encodedMessage: BigInt
+    lightBackpack: bigint[]
+    omega: bigint
+    hardBackpack: bigint[]
+    encodedMessage: bigint
     decodedMessage: boolean[]
-    module: BigInt
-    reverseOmega: BigInt
+    module: bigint
+    reverseOmega: bigint
     errorDescription: string
 }

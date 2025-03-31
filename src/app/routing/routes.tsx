@@ -3,8 +3,15 @@ import {
     SathcelCryptosystemCommon,
     SathcelCryptosystemDemo,
     SathcelCryptosystemEditorial,
-    SathcelCryptosystemTest
 } from '@pages/satchelCryptosystem'
+import {
+    SatchelCryptosystemBackdoorCommon,
+    SatchelCryptosystemBackdooEditorial
+} from '@pages/satchelCryptosystemBackdoor'
+import {
+    ElgamalCryptosystemCommon,
+    ElgamalCryptosystemEditorial
+} from '@pages/elgamalCryptosystem'
 import { SigninPage } from '@pages/signin'
 import { SignupPage } from '@pages/signup'
 import { RFC } from '@shared/types/component'
@@ -16,6 +23,9 @@ export const routes: RFC[] = [
     SignupPage,
     SathcelCryptosystemCommon,
     SathcelCryptosystemEditorial,
-    SathcelCryptosystemTest,
     SathcelCryptosystemDemo,
+    SatchelCryptosystemBackdoorCommon,
+    SatchelCryptosystemBackdooEditorial,
+    ElgamalCryptosystemCommon,
+    ElgamalCryptosystemEditorial
 ]

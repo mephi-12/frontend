@@ -1,0 +1,155 @@
+{
+    "endpoints": [
+      {
+        "endpoint": "POST /auth/login",
+        "request": {
+          "email": "user@example.com",
+          "password": "securePassword123!"
+        },
+        "response": {
+          "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        }
+      },
+      {
+        "endpoint": "POST /auth/registration",
+        "request": {
+          "email": "newuser@example.com",
+          "username": "cryptoLearner",
+          "password": "newSecurePassword456!"
+        },
+        "response": {
+          "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        }
+      },
+      {
+        "endpoint": "GET /user/self",
+        "response": {
+          "email": "user@example.com",
+          "username": "cryptoPro"
+        }
+      },
+      {
+        "endpoint": "GET /user/list",
+        "response": [
+          {
+            "email": "admin@system.com",
+            "username": "superAdmin"
+          },
+          {
+            "email": "user2@domain.com",
+            "username": "student2024"
+          }
+        ],
+        "role": "admin"
+      },
+      {
+        "endpoint": "POST /contest/create",
+        "request": {
+          "name": "Crypto Championship 2024",
+          "description": "Advanced cryptography challenges",
+          "startDate": "2024-09-01T00:00:00Z",
+          "endDate": "2024-09-30T23:59:59Z",
+          "participants": ["user1", "user2"]
+        },
+        "response": {
+          "id": "contest_001",
+          "name": "Crypto Championship 2024",
+          "description": "Advanced cryptography challenges",
+          "startDate": "2024-09-01T00:00:00Z",
+          "endDate": "2024-09-30T23:59:59Z"
+        },
+        "role": "admin"
+      },
+      {
+        "endpoint": "GET /contest/contest_001",
+        "response": {
+          "participants": {
+            "user1": {
+              "solved": 5,
+              "lastActivity": "2024-09-15T14:30:00Z"
+            },
+            "user2": {
+              "solved": 3,
+              "lastActivity": "2024-09-10T09:15:00Z"
+            }
+          }
+        }
+      },
+      {
+        "endpoint": "GET /contest/my",
+        "response": [
+          {
+            "id": "contest_001",
+            "name": "Active Contest",
+            "startDate": "2024-09-01T00:00:00Z",
+            "endDate": "2024-09-30T23:59:59Z"
+          }
+        ]
+      },
+      {
+        "endpoint": "GET /contest/contest_001/tasks/backpack",
+        "response": {
+          "id": "task_knp_01",
+          "createdAt": "2024-09-01T10:00:00Z",
+          "state": "pending",
+          "power": "256",
+          "type": "power2",
+          "message": [true, false, true],
+          "lightBackpack": ["2", "3", "7", "15"],
+          "omega": "16"
+        }
+      },
+      {
+        "endpoint": "GET /contest/contest_001/tasks/backpackbackdoor",
+        "response": {
+          "id": "task_bd_01",
+          "createdAt": "2024-09-01T11:00:00Z",
+          "attackerPublicKey": {
+            "modulus": "256",
+            "multiplier": "16"
+          },
+          "attackerPrivateKey": "241",
+          "transformationParams": {
+            "baseMultiplier": "47",
+            "inverseMultiplier": "73",
+            "modulus": "3430"
+          },
+          "originalSequence": ["2", "3", "7", "15"],
+          "publicKeySequence": ["32", "48", "112", "240"],
+          "plaintext": "11001",
+          "ciphertext": "4921"
+        }
+      },
+      {
+        "endpoint": "POST /contest/contest_001/tasks/task_knp_01/check",
+        "request": {
+          "solution": {
+            "decryptedMessage": [true, false, true]
+          }
+        },
+        "response": {
+          "status": true,
+          "details": "Correct decryption"
+        }
+      },
+      {
+        "endpoint": "PUT /tasks/backpack/editorial",
+        "response": {
+          "id": "demo_knp_01",
+          "power": "1024",
+          "type": "svp",
+          "solutionSteps": ["Генерация ключей", "Шифрование", "Расшифрование"]
+        }
+      },
+      {
+        "endpoint": "GET /tasks/archive/backpack/my",
+        "response": [
+          {
+            "id": "archived_task_01",
+            "state": "solved",
+            "completedAt": "2024-08-15T16:45:00Z"
+          }
+        ]
+      }
+    ]
+  }
