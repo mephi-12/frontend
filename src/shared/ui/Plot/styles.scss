@@ -1,0 +1,12 @@
+@import '@shared/styles/colors';
+
+.plot {
+    background-color: $light-gray;
+    padding: 10px;
+    border-radius: 10px;
+    width: min-content;
+}
+.plot-vertical {
+    width: max-content;
+    gap: 10px;
+}

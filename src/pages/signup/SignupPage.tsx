@@ -1,9 +1,5 @@
-import { RFC } from '@shared/types/component'
-
-export const SignupPage: RFC = () => {
+export const SignupPage = () => {
   return (
     <div>SignupPage</div>
   )
 }
-
-SignupPage.url = '/signup'

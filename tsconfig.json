@@ -13,10 +13,10 @@
       "@features/*": ["./features/*"],
       "@shared/*": ["./shared/*"],
       "@pages/*": ["./pages/*"],
-      "@entity/*": ["./entity/*"]
+      "@entity/*": ["./entity/*"],
     },
     "moduleResolution": "node",
     "outDir": "dist"
   },
-  "include": ["src"]
+  "include": ["src", "public"]
 }

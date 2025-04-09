@@ -1,10 +1,9 @@
-import { units } from '@shared/config/units'
 import './styles.scss'
-import { RFC } from '@shared/types/component'
 import { AnimatedText } from '@shared/ui/AnimatedText'
 import { UnitCard } from '@entity/unit'
+import { unitConfigs } from '@shared/config/units'
 
-export const MenuPage: RFC = () => {
+const MenuPage = () => {
   return (
     <div className='menu-container'>
       <header>
@@ -16,11 +15,11 @@ export const MenuPage: RFC = () => {
       <div className='units'>
         <h2 className='units-text'>Разделы</h2>
         <div className='items'>
-          {units.map(UnitCard)}
+          {unitConfigs.map(UnitCard)}
         </div>
       </div>
     </div>
   )
 }
 
-MenuPage.url = '/'
+export default MenuPage

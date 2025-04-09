@@ -3,7 +3,6 @@
 
 .unit-container {
     .demo-content {
-        margin-bottom: 70px;
         background-color: white;
         display: flex;
         flex-direction: column;
@@ -14,51 +13,22 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            .values {
-                background-color: $light-gray;
-                padding: 10px;
-                border-radius: 10px;
-                width: min-content;
-                max-width: 95%;
-                .value {
-                    p {
-                        text-wrap: nowrap;
-                    }
-                    display: flex;
-                    gap: 10px;
-                    input {
-                        &:focus {
-                            outline: 2px solid $accent;
-                            border-radius: 3px;
-                        }
-                        background-color: transparent;
-                        border: none;
-                    }
+        }
+        .options {
+            display: flex;
+            width: 100%;
+            .field {
+                padding: 15px;
+                border-radius: 5px;
+                flex: 1;
+                justify-content: center;
+                &:hover {
+                    transition: all .15s ease-in-out;
+                    @extend .shadow;
+                    background-color: #cae7d381;
+                    cursor: pointer;
                 }
             }
-            .values-l {
-                @extend .values;
-                display: flex;
-                width: max-content;
-            }
         }
-    }
-
-    .play {
-        width: 30px;
-        cursor: pointer;
-    }
-
-    [class^="result-"] {
-        padding: 15px;
-        border-radius: 15px;
-        p { max-width: 100%; }
-    }
-
-    .result-success {
-        background-color: $success;
-    }
-    .result-error {
-        background-color: $error;
     }
 }

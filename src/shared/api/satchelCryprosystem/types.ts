@@ -1,0 +1,41 @@
+import { Entity } from "@shared/types/Entity"
+
+export enum SatchelCryptosystemType {
+    POWER = 'POWER',
+    SIS = 'SIS'
+}
+
+export enum EncodingDigitType {
+    MIDDLE = 'MIDDLE',
+    HIGH = 'HIGH',
+    LOW = 'LOW'
+}
+
+export type SatchelCryprosystemPowerBase = {
+    type: SatchelCryptosystemType
+    lightBackpack: string[]
+    heavyBackpack: string[]
+    state: string // S
+    omega: string // R
+    module: string // T
+    decoded_message: string
+    encoded_message: string
+}
+
+export type SatchelCryprosystemPower = {
+    type: SatchelCryptosystemType.POWER
+    encoding_power: string
+    encoding_digit: EncodingDigitType
+} & SatchelCryprosystemPowerBase
+
+export type SatchelCryprosystemSIS = {
+    type: SatchelCryptosystemType.SIS
+} & SatchelCryprosystemPowerBase
+
+export type SatchelCryprosystem = Entity & Partial<SatchelCryprosystemPower | SatchelCryprosystemSIS>
+
+export type GetSatchelCryprosystemParams = {
+    encoding_power?: string // for Power type
+    encoding_digit?: EncodingDigitType // for Power type
+    type: SatchelCryptosystemType
+}

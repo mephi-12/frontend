@@ -1,35 +1,28 @@
-import { Unit } from "@entity/unit";
-import { backpackIcon } from "@shared/assests";
+import { Unit, UnitConfig, UnitName } from "./types"
 
-export const units: Unit[] = [
+export const unitConfigs: UnitConfig[] = [
     {
-        name: 'satchel-cryptosystem',
+        name: Unit['satchel_cryptosystem'],
         author: 'Иванов М.А.',
-        title: 'Ранцевая криптосистема',
-        description: 'Ранцевая криптосистема (Knapsack Cryptosystem) основана на задаче о рюкзаке (subset-sum problem), которая считается вычислительно сложной. Цель такой системы — надёжное шифрование данных, используя свойства трудноразрешимых математических задач. Это одна из первых предложенных схем асимметричного шифрования: здесь используются два ключа — публичный (для шифрования) и приватный (для расшифрования). Историческая ценность ранцевой криптосистемы в том, что она задала направление к применению относительно простых математических структур для обеспечения безопасной передачи данных. Основная идея — свести шифрование к поиску подмножества чисел, сумма которых равна заданному значению. Поскольку решение такой задачи сложно, криптосистема устойчива к атакам, основанным на переборе.',
-        preview: backpackIcon,
-        url: '/satchel-cryptosystem/common',
-        rating: 10,
+        title: 'Ранцевая криптосистема'
     },
     {
-        name: 'satchel-cryptosystem-backdoor',
+        name: Unit['satchel_cryptosystem_backdoor'],
         author: 'Иванов М.А.',
-        title: 'Бекдор в ранцевой криптосистеме',
-        description: 'desc',
-        preview: backpackIcon,
-        url: '/satchel-cryptosystem-backdoor/common',
-        rating: 10,
+        title: 'Бекдор в ранцевой криптосистеме'
     },
     {
-        name: 'elgamal-cryptosystem',
+        name: Unit['elgamal_cryptosystem'],
         author: 'Иванов М.А.',
-        title: 'Криптосистема Эльгамаля',
-        description: 'desc',
-        preview: backpackIcon,
-        url: '/elgamal-cryptosystem/common',
-        rating: 10,
+        title: 'Криптосистема Эльгамаля'
     }
-]
+] as const
 
-export const unitByUrl = (path: string) => units.find(({ url }) => url === path)!
-export const unitByName = (nameToCompare: string) => units.find(({ name }) => name === nameToCompare)!
+export const unitByName = (nameToCompare: UnitName) => unitConfigs.find(({ name }) => name === nameToCompare)!
+export const urlByUnitName =
+    (
+        unitName: UnitName,
+        page: 'common' | 'editorial' | 'demo' = 'common'
+    ) => `/${unitName}/${page}`
+
+export * from './types'

@@ -4,8 +4,8 @@ import { routes } from './routes'
 export const Routing = () => (
     <Router>
         <Routes>
-        {routes.map((Component) => (
-          <Route key={Component.url} path={Component.url} element={<Component />} />
+        {routes.map(({ element: Component, url }) => (
+          <Route key={url} path={url} element={<Component />} />
         ))}
       </Routes>
     </Router>

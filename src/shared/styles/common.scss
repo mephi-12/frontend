@@ -71,10 +71,18 @@ h2, h3 {
     display: flex;
 }
 
-.center {
-    display: flex;
+.align-center {
     align-items: center;
+}
+
+.justify-center {
     justify-content: center;
+}
+
+.center {
+    @extend .align-center;
+    @extend .justify-center;
+    display: flex;
 }
 
 .start {

@@ -1,2 +1,4 @@
-export { Common as SatchelCryptosystemBackdoorCommon } from './common/Common'
-export { Editorial as SatchelCryptosystemBackdooEditorial } from './editorial/Editorial'
+import { lazy } from 'react'
+
+export const SatchelCryptosystemBackdoorCommon = lazy(() => import('./Common'))
+export const SatchelCryptosystemBackdooEditorial = lazy(() => import('./Editorial'))

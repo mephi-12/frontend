@@ -7,7 +7,7 @@ export type AnimatedComponentProps = {
   className?: string
   style?: React.CSSProperties
   delay?: number
-}
+} & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
 declare global {
   namespace JSX {
@@ -23,7 +23,7 @@ const createAnimatedComponent = <T extends keyof JSX.IntrinsicElements>(
       const [displayedIndex, setDisplayedIndex] = useState(0)
       const TAG = Tag as any
       useEffect(() => {
-        let interval = 0
+        const interval = 0
         setTimeout(() => {
           setInterval(() => {
             setDisplayedIndex((prev) => {
@@ -38,12 +38,13 @@ const createAnimatedComponent = <T extends keyof JSX.IntrinsicElements>(
         return () => clearInterval(interval)
       }, [text])
 
-      return <TAG {...props as any}>{text.slice(0, displayedIndex)}</TAG>
+      return <TAG {...props}>{text.slice(0, displayedIndex)}</TAG>
     }
 }
 
 export const AnimatedText = {
   h1: createAnimatedComponent('h1'),
   h2: createAnimatedComponent('h2'),
+  h3: createAnimatedComponent('h3'),
   p: createAnimatedComponent('p'),
 }

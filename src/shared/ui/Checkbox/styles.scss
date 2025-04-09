@@ -1,0 +1,82 @@
+@use 'sass:color';
+@import '@shared/styles/colors';
+@import '@shared/styles/common';
+
+$checkbox-size: 16px;
+$checkmark-size: 10px;
+$border-width: 1px;
+$transition: all 0.15s ease;
+
+.custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  color: $text1;
+  font-size: 13px;
+
+  span {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    flex-shrink: 0;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    background: $primary;
+    border: $border-width solid $light-gray;
+    border-radius: 3px;
+    transition: $transition;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 5px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border: solid $primary;
+      border-width: 0 1.5px 1.5px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover:not(.disabled) .checkmark {
+    border-color: $accent;
+    background: color.mix($secondary, $primary, 80%);
+  }
+
+  input:checked ~ .checkmark {
+    background: $success;
+    border-color: $success;
+    &:after { display: block; }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $text2;
+    .checkmark {
+      background: $light-gray;
+      border-color: color.scale($light-gray, $lightness: -10%);
+    }
+    input:checked ~ .checkmark {
+      background: color.scale($success, $lightness: 30%);
+      border-color: color.scale($success, $lightness: 20%);
+    }
+  }
+
+  input:focus-visible ~ .checkmark {
+    box-shadow: 0 0 0 2px color.adjust($accent, $alpha: -0.7);
+  }
+}

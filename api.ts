@@ -14,6 +14,7 @@ export type BackpackTask = {
     type: string
     message: boolean[]
     lightBackpack: string[]
+    heavyBackpack: string[]
     omega: string
 }
 

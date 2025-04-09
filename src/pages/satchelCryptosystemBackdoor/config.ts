@@ -1,1 +1,1 @@
-export const root = '/satchel-cryptosystem-backdoor'
+export const root = '/satchel_cryptosystem_backdoor'

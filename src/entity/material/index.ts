@@ -1,1 +1,0 @@
-export { MaterialNode } from './types'

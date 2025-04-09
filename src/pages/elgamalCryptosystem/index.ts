@@ -1,2 +1,4 @@
-export { Common as ElgamalCryptosystemCommon } from './common/Common'
-export { Editorial as ElgamalCryptosystemEditorial } from './editorial/Editorial'
+import { lazy } from 'react'
+
+export const ElgamalCryptosystemCommon = lazy(() => import('./Common'))
+export const ElgamalCryptosystemEditorial = lazy(() => import('./Editorial'))

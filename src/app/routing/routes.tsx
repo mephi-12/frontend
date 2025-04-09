@@ -14,18 +14,47 @@ import {
 } from '@pages/elgamalCryptosystem'
 import { SigninPage } from '@pages/signin'
 import { SignupPage } from '@pages/signup'
-import { RFC } from '@shared/types/component'
+import { urlByUnitName } from '@shared/config/units'
 
-
-export const routes: RFC[] = [
-    MenuPage,
-    SigninPage,
-    SignupPage,
-    SathcelCryptosystemCommon,
-    SathcelCryptosystemEditorial,
-    SathcelCryptosystemDemo,
-    SatchelCryptosystemBackdoorCommon,
-    SatchelCryptosystemBackdooEditorial,
-    ElgamalCryptosystemCommon,
-    ElgamalCryptosystemEditorial
+export const routes = [
+    {
+        url: '/',
+        element: MenuPage
+    },
+    {
+        url: '/signin',
+        element: SigninPage,
+    },
+    {
+        url: '/signup',
+        element: SignupPage
+    },
+    {
+        url: urlByUnitName('satchel_cryptosystem', 'common'),
+        element: SathcelCryptosystemCommon,
+    },
+    {
+        url: urlByUnitName('satchel_cryptosystem', 'editorial'),
+        element: SathcelCryptosystemEditorial,
+    },
+    {
+        url: urlByUnitName('satchel_cryptosystem', 'demo'),
+        element: SathcelCryptosystemDemo,
+    },
+    {
+        url: urlByUnitName('satchel_cryptosystem_backdoor', 'common'),
+        element: SatchelCryptosystemBackdoorCommon,
+    },
+    {
+        url: urlByUnitName('satchel_cryptosystem_backdoor', 'editorial'),
+        element: SatchelCryptosystemBackdooEditorial,
+    },
+    {
+        url: urlByUnitName('elgamal_cryptosystem', 'common'),
+        element: ElgamalCryptosystemCommon,
+    },
+    {
+        url: urlByUnitName('elgamal_cryptosystem', 'editorial'),
+        element: ElgamalCryptosystemEditorial,
+    }
 ]
