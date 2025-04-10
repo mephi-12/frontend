@@ -6,7 +6,8 @@ import {
 } from '@pages/satchelCryptosystem'
 import {
     SatchelCryptosystemBackdoorCommon,
-    SatchelCryptosystemBackdooEditorial
+    SatchelCryptosystemBackdooEditorial,
+    SatchelCryptosystemBackdooDemo
 } from '@pages/satchelCryptosystemBackdoor'
 import {
     ElgamalCryptosystemCommon,
@@ -48,6 +49,10 @@ export const routes = [
     {
         url: urlByUnitName('satchel_cryptosystem_backdoor', 'editorial'),
         element: SatchelCryptosystemBackdooEditorial,
+    },
+    {
+        url: urlByUnitName('satchel_cryptosystem_backdoor', 'demo'),
+        element: SatchelCryptosystemBackdooDemo,
     },
     {
         url: urlByUnitName('elgamal_cryptosystem', 'common'),

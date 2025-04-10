@@ -2,30 +2,20 @@ import { UnitHeader } from "@shared/ui/UnitHeader"
 import './styles.scss'
 import { CryptosystemState, useCryptosystemState } from "./useCryptosystemState"
 import { EncodingDigitType, SatchelCryprosystem, SatchelCryptosystemType } from "@shared/api/satchelCryprosystem/types"
-import { AnimatedText } from "@shared/ui/AnimatedText"
 import { Plot } from "@shared/ui/Plot"
-import { subscriptDigit } from "@shared/utils/symbols"
 import { Checkbox } from "@shared/ui/Checkbox"
 import { NumberInput } from "@shared/ui/NumberInput"
-
-const renderBackPack = (backpack: string[], letter: string) =>
-    backpack.map((value, idx) => (
-        <AnimatedText.p key={idx} text={`${letter}${subscriptDigit(idx)} = ${value}`} />
-    ))
+import { renderBackpack } from "@shared/utils/renderBackpack"
 
 const Step1 = ({state, omega, module}: SatchelCryprosystem) => {
     return (
         <div className='block'>
-            <AnimatedText.Scope>
-                <AnimatedText.h3 text="Шаг 1. Генерация пары ключей." />
-                <AnimatedText.p text="Возьмем R, S, T такие, что R * S = 1 mod T" />
-            </AnimatedText.Scope>
+            <h3>Шаг 1. Генерация пары ключей.</h3>
+            <p>Возьмем R, S, T такие, что R * S = 1 mod T</p>
             <Plot>
-                <AnimatedText.Scope delay={71 * 20}>
-                    <AnimatedText.p text={`R = ${omega}`} />
-                    <AnimatedText.p text={`S = ${state}`} />
-                    <AnimatedText.p text={`T = ${module}`} />
-                </AnimatedText.Scope>
+                <p>R = {omega}</p>
+                <p>S = {state}</p>
+                <p>T = {module}</p>
             </Plot>
         </div>
     )
@@ -33,27 +23,19 @@ const Step1 = ({state, omega, module}: SatchelCryprosystem) => {
 const Step2 = ({lightBackpack, omega, heavyBackpack}: SatchelCryprosystem) => {
     return (
         <div className='block'>
-            <AnimatedText.Scope>
-                <AnimatedText.h3 text="Шаг 2. Создание легкого и тяжелого рюкзака." />
-                <AnimatedText.p text="Cоставим легкую задачу об укладке рюкзака" />
-            </AnimatedText.Scope>
+            <h3>Шаг 2. Создание легкого и тяжелого рюкзака.</h3>
+            <p>Cоставим легкую задачу об укладке рюкзака</p>
             <Plot>
-                <AnimatedText.Scope delay={84 * 20}>
-                    {renderBackPack(lightBackpack, 'a')}
-                </AnimatedText.Scope>
+                    {renderBackpack(lightBackpack, 'a')}
             </Plot>
-            <AnimatedText.p text="На основе легкого рюкзака и R составим трудную задачу об укладке рюкзака. B = A * R." />
+            <p>На основе легкого рюкзака и R составим трудную задачу об укладке рюкзака. B = A * R.</p>
             <div className="row gap-15 align-center">
                 <Plot>
-                    <AnimatedText.Scope>
-                        {renderBackPack(lightBackpack, 'a')}
-                    </AnimatedText.Scope>
+                        {renderBackpack(lightBackpack, 'a')}
                 </Plot>
                 <p>* {omega} =</p>
                 <Plot>
-                    <AnimatedText.Scope>
-                        {renderBackPack(heavyBackpack, 'b')}
-                    </AnimatedText.Scope>
+                    {renderBackpack(heavyBackpack, 'b')}
                 </Plot>
             </div>
         </div>
@@ -62,16 +44,12 @@ const Step2 = ({lightBackpack, omega, heavyBackpack}: SatchelCryprosystem) => {
 const Step3 = ({lightBackpack, decoded_message, encoded_message}: SatchelCryprosystem) => {
     return (
         <div className='block'>
-            <AnimatedText.Scope>
-                <AnimatedText.h3 text="Шаг 3. Кодирование сообщения." />
-                <AnimatedText.p text={`Сообщение M = ${decoded_message} шифруется по формуле C = M * b`} />
-            </AnimatedText.Scope>
+                <h3>Шаг 3. Кодирование сообщения.</h3>
+                <p>Сообщение M = {decoded_message} шифруется по формуле C = M * b</p>
             <div className="row gap-15 align-center">
                 <p>{decoded_message} *</p>
                 <Plot>
-                    <AnimatedText.Scope>
-                        {renderBackPack(lightBackpack, 'a')}
-                    </AnimatedText.Scope>
+                    {renderBackpack(lightBackpack, 'a')}
                 </Plot>
                 <p>= {encoded_message}</p>
             </div>
@@ -81,14 +59,12 @@ const Step3 = ({lightBackpack, decoded_message, encoded_message}: SatchelCrypros
 const Step4 = ({decoded_message, state, module, encoded_message}: SatchelCryprosystem) => {
     return (
         <div className='block'>
-            <AnimatedText.Scope>
-                <AnimatedText.h3 text="Шаг 4. Расшифровка сообщения." />
-                <AnimatedText.p text="Расшифровываем сообщение по формуле M' = C * S mod T" />
-            </AnimatedText.Scope>
+            <h3>Шаг 4. Расшифровка сообщения.</h3>
+            <p>Расшифровываем сообщение по формуле M' = C * S mod T</p>
             <div className="row gap-15 align-center">
-                <Plot><AnimatedText.p text={encoded_message} /></Plot>
+                <Plot><p>{encoded_message}</p></Plot>
                 <p>*</p>
-                <Plot><AnimatedText.p text={`${state} mod ${module}`} /></Plot>
+                <Plot><p>{state} mod {module}</p></Plot>
                 <p>= {decoded_message}</p>
             </div>
         </div>
@@ -130,6 +106,7 @@ const Options = ({type, encoding_digit, encoding_power, setOptions}: Cryptosyste
                     className='power'
                     value={encoding_power}
                     onChange={e => setPower(e.target.value)}
+                    label="Кодирование в степенях числа"
                 />
                 <Checkbox onClick={(e) => {e.stopPropagation(); onDigitClick(EncodingDigitType.HIGH)}} checked={!isSISType && isHighDigit} label={`В старших разрядах`} />
                 <Checkbox onClick={(e) => {e.stopPropagation(); onDigitClick(EncodingDigitType.MIDDLE)}} checked={!isSISType && isMiddleDigit} label={`В средних разрядах`} />
@@ -139,7 +116,7 @@ const Options = ({type, encoding_digit, encoding_power, setOptions}: Cryptosyste
     )
 }
 
-export const Demo = () => {
+const Demo = () => {
     const { demoOptions, demoState } = useCryptosystemState()
     return (
       <div className='unit-container'>
@@ -153,4 +130,6 @@ export const Demo = () => {
         </div>
       </div>
     )
-  }
+}
+
+export default Demo
