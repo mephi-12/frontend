@@ -46,7 +46,7 @@ const Step3 = ({s, decoded_message, prime, secretKey, ciphertext}: ElgamalCrypto
             <Plot>
                 <p>S = {ciphertext.c1}{up(secretKey)} mod {prime} = {s}</p>
             </Plot>
-            <p>Восстанавливается исходное ообщение M = C{bot(2)} * S{up('-1')} mod P</p>
+            <p>Восстанавливается исходное сообщение M = C{bot(2)} * S{up('-1')} mod P</p>
             <Plot>
                 <p>M = {ciphertext.c2} * {s}{up('-1')} mod {prime} = {decoded_message}</p>
             </Plot>
