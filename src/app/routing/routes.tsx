@@ -11,6 +11,7 @@ import {
 } from '@pages/satchelCryptosystemBackdoor'
 import {
     ElgamalCryptosystemCommon,
+    ElgamalCryptosystemDemo,
     ElgamalCryptosystemEditorial
 } from '@pages/elgamalCryptosystem'
 import { SigninPage } from '@pages/signin'
@@ -61,5 +62,9 @@ export const routes = [
     {
         url: urlByUnitName('elgamal_cryptosystem', 'editorial'),
         element: ElgamalCryptosystemEditorial,
+    },
+    {
+        url: urlByUnitName('elgamal_cryptosystem', 'demo'),
+        element: ElgamalCryptosystemDemo,
     }
 ]

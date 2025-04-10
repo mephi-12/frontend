@@ -1,0 +1,34 @@
+@import '@shared/styles/common.scss';
+@import '@shared/styles/colors.scss';
+
+.unit-container {
+    .demo-content {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        padding: 20px;
+        border-radius: 10px;
+        .block {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .options {
+            display: flex;
+            width: 100%;
+            .field {
+                padding: 15px;
+                border-radius: 5px;
+                flex: 1;
+                justify-content: center;
+                &:hover {
+                    transition: all .15s ease-in-out;
+                    @extend .shadow;
+                    background-color: #cae7d381;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
