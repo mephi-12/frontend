@@ -27,7 +27,7 @@ const Step1 = ({prime, generator, secretKey, publicKey}: ElgamalCryptosistem) =>
 const Step2 = ({ciphertext, generator, publicKey, k, prime, decoded_message}: ElgamalCryptosistem) => {
     return (
         <div className='block'>
-            <h3>Шаг 21. Шифрование сообщения.</h3>
+            <h3>Шаг 2. Шифрование сообщения.</h3>
             <p>Выбираются случайное число K, вычисляется шифротекст (C{bot(1)}, C{bot(2)}): C{bot(1)} = G{up('k')} mod P, C{bot(2)} = M * Y{up('k')} mod P</p>
             <Plot>
                 <p>M = {decoded_message}</p>
