@@ -35,7 +35,7 @@ export const AnimatedTextScope = ({children, delay: scopeDelay = 0, name}: Props
       }
       reducedDelay += oldDelay + interval * length
       if (idx == items.length - 1) {
-        newProps = {...newProps, 'data-reduced-delay': reducedDelay, id: name}
+        newProps = {...newProps, id: name}
       }
       return cloneElement(item as any, newProps)
     })
