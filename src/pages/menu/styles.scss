@@ -25,4 +25,14 @@
             flex-wrap: wrap;
         }
     }
+    .tests-container {
+        h2 {font-weight: 400;}
+        .items {
+            display: flex;
+            flex-direction: column;
+            .item {
+                width: 100%;
+            }
+        }
+    }
 }

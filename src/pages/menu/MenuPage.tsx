@@ -2,6 +2,7 @@ import './styles.scss'
 import { AnimatedText } from '@shared/ui/AnimatedText'
 import { UnitCard } from '@entity/unit'
 import { unitConfigs } from '@shared/config/units'
+import { Link } from 'react-router-dom'
 
 const MenuPage = () => {
   return (
@@ -17,6 +18,11 @@ const MenuPage = () => {
         <div className='items'>
           {unitConfigs.map(UnitCard)}
         </div>
+      </div>
+      <div className='tests-container'>
+        <h2>
+          Тестирование
+        </h2>
       </div>
     </div>
   )
