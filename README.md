@@ -52,10 +52,4 @@ export default tseslint.config({
 cd mephi12/frontend
 git pull
 docker build -t frontend-app .
-docker run -d \
-  -p 80:80 \
-  -p 443:443 \
-  -e VITE_API_BASE_URL=https://api.affine.command.mephi.ru \
-  --restart unless-stopped \
-  --name frontend \
-  frontend-app
+docker run -d -p 3000:3000 frontend-app
