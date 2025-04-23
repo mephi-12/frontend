@@ -1,4 +1,4 @@
-import { ElgamalCryptosistem } from "../types";
+import { ElgamalCryptosistem } from "../types"
 
 export const mock: ElgamalCryptosistem = {
     id: '4',

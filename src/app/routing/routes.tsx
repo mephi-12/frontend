@@ -6,16 +6,15 @@ import {
 } from '@pages/satchelCryptosystem'
 import {
     SatchelCryptosystemBackdoorCommon,
-    SatchelCryptosystemBackdooEditorial,
-    SatchelCryptosystemBackdooDemo
+    SatchelCryptosystemBackdoorEditorial,
+    SatchelCryptosystemBackdoorDemo
 } from '@pages/satchelCryptosystemBackdoor'
 import {
     ElgamalCryptosystemCommon,
     ElgamalCryptosystemDemo,
     ElgamalCryptosystemEditorial
 } from '@pages/elgamalCryptosystem'
-import { SigninPage } from '@pages/signin'
-import { SignupPage } from '@pages/signup'
+import { AuthPage } from '@pages/auth'
 import { urlByUnitName } from '@shared/config/units'
 
 export const routes = [
@@ -25,11 +24,11 @@ export const routes = [
     },
     {
         url: '/signin',
-        element: SigninPage,
+        element: AuthPage
     },
     {
         url: '/signup',
-        element: SignupPage
+        element: AuthPage
     },
     {
         url: urlByUnitName('satchel_cryptosystem', 'common'),
@@ -49,11 +48,11 @@ export const routes = [
     },
     {
         url: urlByUnitName('satchel_cryptosystem_backdoor', 'editorial'),
-        element: SatchelCryptosystemBackdooEditorial,
+        element: SatchelCryptosystemBackdoorEditorial,
     },
     {
         url: urlByUnitName('satchel_cryptosystem_backdoor', 'demo'),
-        element: SatchelCryptosystemBackdooDemo,
+        element: SatchelCryptosystemBackdoorDemo,
     },
     {
         url: urlByUnitName('elgamal_cryptosystem', 'common'),

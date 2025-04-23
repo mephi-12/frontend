@@ -1,4 +1,4 @@
-import { COLORS } from "@shared/dictionary";
+import { COLORS } from "@shared/dictionary"
 
 export const satchelCryptosystem = {
     lightBackpack: {

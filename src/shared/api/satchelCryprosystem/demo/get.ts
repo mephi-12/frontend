@@ -1,4 +1,4 @@
-import { EncodingDigitType, GetSatchelCryprosystemParams, SatchelCryprosystem, SatchelCryptosystemType } from "../types";
+import { EncodingDigitType, GetSatchelCryprosystemParams, SatchelCryprosystem, SatchelCryptosystemType } from "../types"
 
 const mockPOWER2: SatchelCryprosystem = {
     id: '0',

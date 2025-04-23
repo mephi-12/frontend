@@ -22,7 +22,7 @@ const isAnimatedTextItem = (item: any) => !!item?.props?.text
 
 export const AnimatedTextScope = ({children, delay: scopeDelay = 0, name}: Props) => {
   const items = asArray(children).filter(isAnimatedTextItem) as AnimatedTextItem[]
-  let reducedDelay = 0;
+  let reducedDelay = 0
   return (
     items.map((item, idx) => {
       const oldDelay = item.props.delay ?? 0

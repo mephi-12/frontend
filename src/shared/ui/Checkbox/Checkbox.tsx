@@ -1,5 +1,5 @@
-import React, { InputHTMLAttributes } from 'react';
-import './styles.scss';
+import React, { InputHTMLAttributes } from 'react'
+import './styles.scss'
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string

@@ -1,4 +1,4 @@
-import { Entity } from "@shared/types/Entity";
+import { Entity } from "@shared/types/Entity"
 
 export type ElgamalCryptosistemBase = {
     prime: string
@@ -6,7 +6,10 @@ export type ElgamalCryptosistemBase = {
     secretKey: string
     publicKey: string
     k: string
-    ciphertext: {c1: string; c2: string}
+    ciphertext: {
+        c1: string
+        c2: string
+    }
     s: string
     decoded_message: string
 }

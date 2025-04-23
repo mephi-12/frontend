@@ -1,6 +1,6 @@
-import { UnitName } from "@shared/config/units";
-import { MaterialNode } from "@shared/ui/EditorialTemplate";
-import { useEffect, useState } from "react";
+import { UnitName } from "@shared/config/units"
+import { MaterialNode } from "@shared/ui/EditorialTemplate"
+import { useEffect, useState } from "react"
 
 export const useAnnotation = (unitName: UnitName) => {
     const [annotation, setAnnotation] = useState('')

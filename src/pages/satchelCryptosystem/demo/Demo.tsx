@@ -98,19 +98,34 @@ const Options = ({type, encoding_digit, encoding_power, setOptions}: Cryptosyste
     
     return (
         <div className='options'>
-            <div className="field" onClick={(e) => {e.stopPropagation(); onFieldClick(SatchelCryptosystemType.SIS)}}>
+            <div className="field" onClick={(e) => {
+                e.stopPropagation()
+                onFieldClick(SatchelCryptosystemType.SIS)
+            }}>
                 <Checkbox checked={isSISType} label="Супервозрастающая последовательность" />
             </div>
-            <div className="field column gap-10" onClick={(e) => {e.stopPropagation(); onFieldClick(SatchelCryptosystemType.POWER)}}>
+            <div className="field column gap-10" onClick={(e) => {
+                e.stopPropagation()
+                onFieldClick(SatchelCryptosystemType.POWER)
+            }}>
                 <NumberInput
                     className='power'
                     value={encoding_power}
                     onChange={e => setPower(e.target.value)}
                     label="Кодирование в степенях числа"
                 />
-                <Checkbox onClick={(e) => {e.stopPropagation(); onDigitClick(EncodingDigitType.HIGH)}} checked={!isSISType && isHighDigit} label={`В старших разрядах`} />
-                <Checkbox onClick={(e) => {e.stopPropagation(); onDigitClick(EncodingDigitType.MIDDLE)}} checked={!isSISType && isMiddleDigit} label={`В средних разрядах`} />
-                <Checkbox onClick={(e) => {e.stopPropagation(); onDigitClick(EncodingDigitType.LOW)}} checked={!isSISType && isLowDigit} label={`В младших разрядах`} />
+                <Checkbox onClick={(e) => {
+                    e.stopPropagation()
+                    onDigitClick(EncodingDigitType.HIGH)}
+                } checked={!isSISType && isHighDigit} label={`В старших разрядах`} />
+                <Checkbox onClick={(e) => {
+                    e.stopPropagation()
+                    onDigitClick(EncodingDigitType.MIDDLE)}
+                } checked={!isSISType && isMiddleDigit} label={`В средних разрядах`} />
+                <Checkbox onClick={(e) => {
+                    e.stopPropagation()
+                    onDigitClick(EncodingDigitType.LOW)}
+                } checked={!isSISType && isLowDigit} label={`В младших разрядах`} />
             </div>
         </div>
     )

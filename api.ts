@@ -52,16 +52,16 @@ export type BackdoorKnapsackTask = {
 }
 
 export type ElgamalTask = {
-    id: string;
-    createdAt: Date;
-    prime: string;
-    generator: string;
-    secretKey: string;
-    publicKey: string;
-    message: string;
-    k: string | null;
-    ciphertext: {c1: string; c2: string} | null;
-    signature?: {r: string; s: string};
+    id: string
+    createdAt: Date
+    prime: string
+    generator: string
+    secretKey: string
+    publicKey: string
+    message: string
+    k: string | null
+    ciphertext: {c1: string c2: string} | null
+    signature?: {r: string s: string}
 }
 
 export const endpoints = [

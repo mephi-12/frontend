@@ -1,4 +1,4 @@
-import { subscript } from "./symbols";
+import { subscript } from "./symbols"
 
 export const renderBackpack = (backpack: string[], letter: string) =>
     backpack.map((value, idx) => (

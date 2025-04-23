@@ -1,9 +1,9 @@
-import React from 'react';
-import './styles.scss';
+import React from 'react'
+import './styles.scss'
 
 interface NumberInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  error?: boolean;
+  label?: string
+  error?: boolean
   onAdd?: () => void
   onSub?: () => void
 }
@@ -27,5 +27,5 @@ export const NumberInput: React.FC<NumberInputProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

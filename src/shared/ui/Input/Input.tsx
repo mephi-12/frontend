@@ -6,8 +6,8 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input = ({ label, ...props }: Props) => {
-  const spanRef = useRef<HTMLSpanElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const spanRef = useRef<HTMLSpanElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const updateInputWidth = () => {
     if (spanRef.current && inputRef.current) {
       spanRef.current.textContent = inputRef.current.value || props.placeholder || ''

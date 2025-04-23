@@ -11,12 +11,16 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@mantine/core": "^7.17.4",
+    "@mantine/hooks": "^7.17.4",
     "axios": "^1.7.9",
+    "jwt-decode": "^4.0.0",
     "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-jss": "^10.10.0",
     "react-router-dom": "^6.28.0",
+    "safe-buffer": "^5.2.1",
     "sass": "^1.82.0"
   },
   "devDependencies": {
