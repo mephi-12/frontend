@@ -5,7 +5,6 @@ import { useAnnotation } from "@shared/utils/useAnnotation"
 
 export const CommonTemplate: React.FC<{unitName: UnitName}> = ({ unitName }) => {
   const description = useAnnotation(unitName)
-  console.log(description)
   return (
     <div className='unit-container'>
       <UnitHeader />

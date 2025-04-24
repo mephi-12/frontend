@@ -1,4 +1,4 @@
-import { satchelCryptosystemBackdoorDemoApi } from "@shared/api/satchelCryprosystemBackdoor"
+import { satchelCryptosystemBackdoorApi } from "@shared/api/satchelCryprosystemBackdoor"
 import { SatchelCryprosystemBackdoor } from "@shared/api/satchelCryprosystemBackdoor/types"
 import { debounce } from "@shared/utils/debounce"
 import { useEffect, useState, useRef } from "react"
@@ -8,7 +8,7 @@ export const useBackdoorState = () => {
 
     const debouncedApiRequestRef = useRef(
         debounce(() => {
-            satchelCryptosystemBackdoorDemoApi
+            satchelCryptosystemBackdoorApi
                 .getSatchelCryptosystemBackdoorDemo()
                 .then(setState)
         }, 300)

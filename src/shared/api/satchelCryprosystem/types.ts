@@ -1,4 +1,5 @@
 import { Entity } from "@shared/types/Entity"
+import { TaskStatus } from "@shared/types/Task"
 
 export enum SatchelCryptosystemType {
     POWER = 'POWER',
@@ -39,3 +40,8 @@ export type GetSatchelCryprosystemParams = {
     encoding_digit?: EncodingDigitType // for Power type
     type: SatchelCryptosystemType
 }
+
+export type SatchelCryprosystemTask = {
+    data: Partial<SatchelCryprosystemPower | SatchelCryprosystemSIS>
+    status: TaskStatus
+} & Entity

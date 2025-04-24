@@ -1,0 +1,21 @@
+@import '@/shared/styles/common';
+@import '@/shared/styles/unit';
+@import '@/shared/styles/colors.scss';
+
+.challenge-container {
+    margin-top: 50px;
+    @extend .container;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .task-container {
+        
+    }
+}

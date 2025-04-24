@@ -1,5 +1,8 @@
 import { getElgamalCryptosistemDemo } from "./demo/get"
+import { checkTask, getTask } from "./task"
 
 export const elgamalCryptosystemApi = {
-    getElgamalCryptosistemDemo
+    getElgamalCryptosistemDemo,
+    getTask,
+    checkTask
 }

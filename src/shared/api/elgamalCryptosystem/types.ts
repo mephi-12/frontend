@@ -1,4 +1,5 @@
 import { Entity } from "@shared/types/Entity"
+import { TaskStatus } from "@shared/types/Task"
 
 export type ElgamalCryptosistemBase = {
     prime: string
@@ -15,3 +16,8 @@ export type ElgamalCryptosistemBase = {
 }
 
 export type ElgamalCryptosistem = Entity & Partial<ElgamalCryptosistemBase>
+
+export type ElgamalCryptosistemTask = {
+    data: Partial<ElgamalCryptosistemBase>
+    status: TaskStatus
+} & Entity

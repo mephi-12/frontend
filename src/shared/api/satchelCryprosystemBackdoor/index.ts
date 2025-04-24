@@ -1,5 +1,8 @@
 import { getSatchelCryptosystemBackdoorDemo } from "./demo/get"
+import { checkTask, getTask } from "./task"
 
-export const satchelCryptosystemBackdoorDemoApi = {
-    getSatchelCryptosystemBackdoorDemo
+export const satchelCryptosystemBackdoorApi = {
+    getSatchelCryptosystemBackdoorDemo,
+    getTask,
+    checkTask
 }

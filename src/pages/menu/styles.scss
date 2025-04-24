@@ -26,12 +26,24 @@
         }
     }
     .tests-container {
+        width: 100%;
         h2 {font-weight: 400;}
         .items {
             display: flex;
             flex-direction: column;
+            gap: 10px;
             .item {
-                width: 100%;
+                border-radius: 10px;
+                padding: 10px;
+                display: flex;
+                background-color: white;
+                align-items: center;
+                gap: 10px;
+                .sec {
+                    padding-left: 20px;
+                    border-right: 1px solid black;
+                    padding-right: 20px;
+                }
             }
         }
     }

@@ -1,4 +1,5 @@
 import { Entity } from "@shared/types/Entity"
+import { TaskStatus } from "@shared/types/Task"
 
 export type SatchelCryprosystemBackdoorBase = {
     attackerKey: {        // PK_w злоумышленника
@@ -25,3 +26,8 @@ export type SatchelCryprosystemBackdoorBase = {
 
 export type SatchelCryprosystemBackdoor
     = Entity & Partial<SatchelCryprosystemBackdoorBase>
+
+export type SatchelCryprosystemBackdoorTask = {
+    data: Partial<SatchelCryprosystemBackdoorBase>
+    status: TaskStatus
+} & Entity

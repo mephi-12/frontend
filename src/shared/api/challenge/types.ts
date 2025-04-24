@@ -3,5 +3,6 @@ export type Challenge = {
     name: string
     dateStart: string
     dateEnd: string
-    tasksCount: string
+    tasksCount: number
+    progress: number // число решенных задач
 }
