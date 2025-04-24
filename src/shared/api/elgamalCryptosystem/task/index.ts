@@ -5,15 +5,15 @@ import { TaskStatus } from "@shared/types/Task"
 const mock = {
     data: {
         prime: "23",
-        generator: "5",
+        generator: null,
         secretKey: "13",
         publicKey: "21",
         k: "7",
         ciphertext: {
-            c1: "17",
+            c1: null,
             c2: "12"
         },
-        s: '11',
+        s: null,
         decoded_message: "15",
     },
     id: '23r2323',

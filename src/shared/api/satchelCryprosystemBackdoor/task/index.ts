@@ -6,20 +6,20 @@ const mock = {
     data: {
         attackerKey: {
             module: '77',
-            omega: '43',
+            omega: null,
             state: '7'
         },
         keys: {  
             omega: '47',
             state: '73',
-            module: '3430'
+            module: null
         },
         magicNumber: {
-            omega: '75',
+            omega: null,
             state: '17'
         },
-        lightBackpack: ['0109', '0202', '0407', '0808', '1605'],
-        heavyBackpack: ['1505', '2587', '1697', '0011', '3405'],
+        lightBackpack: ['0109', null, '0407', '0808', '1605'],
+        heavyBackpack: [null, null, null, null, null],
         decoded_message: '10011',
         encoded_message: '4921',
         decoded_message_ten: '25',

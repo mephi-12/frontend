@@ -16,6 +16,27 @@
         gap: 30px;
     }
     .task-container {
-        
+        h2 {
+            font-weight: 500;
+        }
+        h3 {
+            font-weight: 400;
+        }
+        .btn-check {
+            width: 100%;
+            button {
+                width: 100%;
+                background-color: $success;
+                height: 40px;
+                transition: all .1s ease-in-out;
+                &:hover {
+                    background-color: $text2;
+                    color: white;
+                }
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+            }
+        }
     }
 }

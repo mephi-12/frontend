@@ -34,7 +34,7 @@ export const challengeApi = {
                 dateStart: dayjs().toISOString(),
                 dateEnd: dayjs().add(2, 'h').toISOString(),
                 tasksCount: 3,
-                progress: 0,
+                progress: 2,
             }
         )
     }

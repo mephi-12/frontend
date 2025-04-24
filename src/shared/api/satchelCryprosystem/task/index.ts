@@ -13,7 +13,7 @@ const mock = {
         encoded_message: '3653',
         decoded_message: null,
         lightBackpack: [null, '502', '304', null, '016'],
-        heavyBackpack: [null, '1238', null, '2010', null]
+        heavyBackpack: [null, null, null, null, null]
     },
     id: '213421341234',
     createdAt: dayjs().toISOString(),

@@ -16,7 +16,6 @@ const getTask = (task: Task) => {
 
 const ChallengePage = () => {
     const {challenge, task} = useChallenge()
-    useLog(challenge, task)
     return (
         <div className="challenge-container shadow">
             <div className="header">
@@ -28,7 +27,7 @@ const ChallengePage = () => {
                     labels={['РК', 'Бекдор в РК', 'КС Эльгамаля']}
                 />}
             </div>
-            <div>
+            <div className="task-container">
                 {task && getTask(task)}
             </div>
         </div>
