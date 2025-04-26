@@ -4,7 +4,7 @@ import { UnitCard } from '@entity/unit'
 import { unitConfigs } from '@shared/config/units'
 import { challengeApi } from '@shared/api/challenge'
 import { use } from '@shared/utils/use'
-import dayjs, { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 import { Link } from 'react-router-dom'
 
 const formatDate = (date: string) => dayjs(date).format('DD-MM HH:mm')
@@ -21,7 +21,7 @@ const MenuPage = () => {
       <div className='units'>
         <h2 className='units-text'>Разделы</h2>
         <div className='items'>
-          {unitConfigs.map(UnitCard)}
+          {unitConfigs.map((unit) => <UnitCard {...unit} />)}
         </div>
       </div>
       <div className='tests-container'>

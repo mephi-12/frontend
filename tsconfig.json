@@ -16,7 +16,8 @@
       "@entity/*": ["./entity/*"],
     },
     "moduleResolution": "node",
-    "outDir": "dist"
+    "outDir": "dist",
+    "skipLibCheck": true
   },
   "include": ["src", "public"]
 }

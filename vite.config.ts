@@ -32,10 +32,7 @@ export default defineConfig({
         '@entity': resolve(__dirname, 'src/entity'),
     },
   },
-  optimizeDeps: {
-    include: ['antd/es/message']
-  },
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
   }
 })
