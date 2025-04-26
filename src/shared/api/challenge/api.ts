@@ -8,7 +8,7 @@ export const challengeApi = {
         "NOT IMPLEMENTED"
         return Promise.resolve([
             {
-                name: 'WTDFSDFWV1231231',
+                name: 'Тест для группы Б23-501',
                 id: '232345646hewfrtgbsergghjrymut',
                 dateStart: dayjs().toISOString(),
                 dateEnd: dayjs().add(2, 'h').toISOString(),
@@ -16,7 +16,7 @@ export const challengeApi = {
                 progress: 0
             },
             {
-                name: '54trhgbfvegrghr',
+                name: 'Тест для группы Б23-544',
                 id: 'ryjtyj765ewaf',
                 dateStart: dayjs().toISOString(),
                 dateEnd: dayjs().add(2, 'h').toISOString(),
@@ -30,7 +30,7 @@ export const challengeApi = {
         return Promise.resolve(
             {
                 id,
-                name: 'WTDFSDFWV1231231',
+                name: 'Тест для группы Б23-501',
                 dateStart: dayjs().toISOString(),
                 dateEnd: dayjs().add(2, 'h').toISOString(),
                 tasksCount: 3,
