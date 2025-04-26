@@ -7,5 +7,20 @@ $light-gray: #e4e4e4;
 $accent: #EEC5FD;
 $success: #31E458;
 $error: #f75255;
+$warning: #fbea54;
 
 $background: linear-gradient(to bottom right, $secondary, $primary);
+
+$colors: (
+  success: $success,
+  error: $error,
+  warning: $warning
+);
+
+@each $name, $value in $colors {
+  .ant-message-#{$name} {
+    * {
+      color: #{$value} !important;
+    }
+  }
+}

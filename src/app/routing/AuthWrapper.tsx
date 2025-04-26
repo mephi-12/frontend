@@ -6,7 +6,7 @@ export const AuthWrapper = ({children}: {children?: React.ReactNode}) => {
   const navigate = useNavigate()
   useEffect(() => {
     if (!getUserInfo()) {
-    //   navigate('/signin')
+      navigate('/signin')
     }
   }, [])
   return children

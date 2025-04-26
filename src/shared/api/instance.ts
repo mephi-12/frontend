@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const http = axios.create({
-    baseURL: 'https://affine.command.mephi.ru/api',
+    baseURL: '/api',
 })
 
 http.interceptors.request.use((config) => {
@@ -10,7 +10,7 @@ http.interceptors.request.use((config) => {
     return config
 })
 
-http.interceptors.request.use((config) => {
+http.interceptors.response.use((config) => {
     if (config.data?.accessJwt) {
         localStorage.setItem('token', config.data.accessJwt)
     }

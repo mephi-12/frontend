@@ -5,8 +5,23 @@ import { resolve } from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true
+      }
+    }
+  },
   server: {
     port: 3000,
+    proxy: {
+      '/api': {
+        target: "https://affine.command.mephi.ru/api",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, "")
+      }
+    }
   },
   resolve: {
     alias: {
@@ -16,6 +31,9 @@ export default defineConfig({
         '@pages': resolve(__dirname, 'src/pages'),
         '@entity': resolve(__dirname, 'src/entity'),
     },
+  },
+  optimizeDeps: {
+    include: ['antd/es/message']
   },
   build: {
     outDir: 'dist'

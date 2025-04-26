@@ -33,7 +33,7 @@ export type SatchelCryprosystemSIS = {
     type: SatchelCryptosystemType.SIS
 } & SatchelCryprosystemPowerBase
 
-export type SatchelCryprosystem = Entity & Partial<SatchelCryprosystemPower | SatchelCryprosystemSIS>
+export type SatchelCryprosystem = Partial<SatchelCryprosystemPower | SatchelCryprosystemSIS>
 
 export type GetSatchelCryprosystemParams = {
     encoding_power?: string // for Power type
