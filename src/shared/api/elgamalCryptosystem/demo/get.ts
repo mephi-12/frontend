@@ -1,8 +1,9 @@
-import { ElgamalCryptosistem } from "../types"
+import { http } from "@shared/api/instance"
+import { ElgamalCryptosistem, ElgamalCryptosistemDemoResponse } from "../types"
+import { mapResponse } from "./map"
+import { message } from "antd"
 
 export const mock: ElgamalCryptosistem = {
-    id: '4',
-    createdAt: new Date().toISOString(),
     prime: "23",
     generator: "5",
     secretKey: "13",
@@ -16,7 +17,12 @@ export const mock: ElgamalCryptosistem = {
     decoded_message: "15",
 }
 
-export const getElgamalCryptosistemDemo = (): Promise<ElgamalCryptosistem> => {
-    "NOT IMPLEMENTED"
-    return Promise.resolve(mock)
+export const getElgamalCryptosistemDemo = async (): Promise<ElgamalCryptosistem> => {
+    try {
+        const demo = await http.get<ElgamalCryptosistemDemoResponse>('/tasks/eigamal/editorial?bitLength=100')
+        return mapResponse(demo.data)
+    } catch (error) {
+        void message.error('Не удалось получить сложный пример с сервера, посмотрите простой, пока мы чиним ошибку :)')
+        return Promise.resolve(mock)
+    }
 }

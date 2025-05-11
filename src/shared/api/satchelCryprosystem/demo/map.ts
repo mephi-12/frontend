@@ -45,6 +45,7 @@ export const map = ({
 
 
 export const mapParams = (params: GetSatchelCryprosystemParams) => ({
-    ...params,
+    digit: Number(params.encoding_digit) || undefined,
+    power: Number(params.encoding_power) || undefined,
     type: satchelCryprosystemType[params.type]
 })

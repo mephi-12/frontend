@@ -1,7 +1,9 @@
 import axios from "axios"
+import JSONBigInt from 'json-bigint'
 
 export const http = axios.create({
     baseURL: '/api',
+    transformResponse: [data => JSONBigInt({ useNativeBigInt: true }).parse(data)]
 })
 
 http.interceptors.request.use((config) => {

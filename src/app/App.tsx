@@ -6,10 +6,8 @@ import { MantineProvider } from '@mantine/core'
 
 export const App = () => {
   return (
-    <main>
-      <MantineProvider>
-        <Routing />
-      </MantineProvider>
-    </main>
+    <MantineProvider>
+      <Routing />
+    </MantineProvider>
   )
 }

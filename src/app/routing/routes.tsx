@@ -17,6 +17,7 @@ import {
 import { AuthPage } from '@pages/auth'
 import { urlByUnitName } from '@shared/config/units'
 import { ChallengePage } from '@pages/challenge'
+import { AboutPage } from '@pages/about'
 
 export const routes = [
     {
@@ -71,4 +72,8 @@ export const routes = [
         url: urlByUnitName('elgamal_cryptosystem', 'demo'),
         element: ElgamalCryptosystemDemo,
     },
+    {
+        url: 'about',
+        element: AboutPage
+    }
 ] as const
