@@ -48,7 +48,7 @@ export type SatchelCryprosystemTask = {
 
 export type SatchelCryprosystemServerResponse = {
     power: number
-    type: 'BACKPACK_CODE_SUPER_INCREASING' | 'CODE_DEGREES',
+    type: 'BACKPACK_CODE_SUPER_INCREASING' | 'BACKPACK_CODE_DEGREES',
     message: boolean[],
     lightBackpack: bigint[],
     omega: bigint,
