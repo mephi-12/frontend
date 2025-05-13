@@ -5,21 +5,23 @@ import { useEffect, useState, useRef } from "react"
 
 export const useCryptosystemState = () => {
     const [state, setState] = useState<ElgamalCryptosistem | null>(null)
+    const [bitLength, setBitLength] = useState(10)
 
-    const debouncedApiRequestRef = useRef(
+    const debouncedApiRequest =
         debounce(() => {
             elgamalCryptosystemApi
-                .getElgamalCryptosistemDemo()
+                .getElgamalCryptosistemDemo(bitLength)
                 .then(setState)
-        }, 300)
-    )
+        }, 1000)
 
     useEffect(() => {
-        debouncedApiRequestRef.current?.()
-    }, [])
+        debouncedApiRequest()
+    }, [bitLength])
 
     return {
         demoState: state,
+        bitLength,
+        setBitLength
     }
 }
 

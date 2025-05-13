@@ -4,6 +4,7 @@ import './styles.scss'
 import { ElgamalCryptosistem } from "@shared/api/elgamalCryptosystem/types"
 import { subscript, superscriptDigit } from "@shared/utils/symbols"
 import { Plot } from "@shared/ui/Plot"
+import { NumberInput } from "@mantine/core"
 
 const up = superscriptDigit
 const bot = subscript
@@ -56,11 +57,18 @@ const Step3 = ({s, decoded_message, prime, secretKey, ciphertext}: ElgamalCrypto
 
 
 const Demo = () => {
-    const { demoState } = useCryptosystemState()
+    const { demoState, bitLength, setBitLength } = useCryptosystemState()
     return (
       <div className='unit-container'>
         <UnitHeader />
         <div className='demo-content shadow'>
+            <NumberInput
+                style={{width: '250px'}}
+                className='power'
+                value={bitLength}
+                onChange={e => setBitLength(e as number)}
+                label="Примерное кол-во разрядов"
+            />
             {demoState && <Step1 {...demoState} />}
             {demoState && <Step2 {...demoState} />}
             {demoState && <Step3 {...demoState} />}

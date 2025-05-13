@@ -17,9 +17,9 @@ export const mock: ElgamalCryptosistem = {
     decoded_message: "15",
 }
 
-export const getElgamalCryptosistemDemo = async (): Promise<ElgamalCryptosistem> => {
+export const getElgamalCryptosistemDemo = async (bitLength: number = 10): Promise<ElgamalCryptosistem> => {
     try {
-        const demo = await http.get<ElgamalCryptosistemServerResponse>('/tasks/eigamal/editorial?bitLength=100')
+        const demo = await http.get<ElgamalCryptosistemServerResponse>('/tasks/eigamal/editorial', {params: {bitLength}})
         return mapResponse(demo.data)
     } catch (error) {
         void message.error('Не удалось получить сложный пример с сервера, посмотрите простой, пока мы чиним ошибку :)')
