@@ -8,9 +8,9 @@ const About = () => {
     <div className='off'>
       <h1>Разработчики:</h1>
       <div className="imgs">
-        <div className='img'><img src={gosha} /><p>Георгий Анохин</p></div>
-        <div className='img'><img src={victor} /><p>Виктор Кокрев</p></div>
-        <div className='img'><img src={denis} /><p>Денис Георгиев</p></div>
+        <div className='img'><img src={gosha} /><p>Георгий Анохин Б23-544</p></div>
+        <div className='img'><img src={victor} /><p>Виктор Кокрев Б23-544</p></div>
+        <div className='img'><img src={denis} /><p>Денис Георгиев Б23-501</p></div>
       </div>
     </div>
   )
