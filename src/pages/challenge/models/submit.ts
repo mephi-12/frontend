@@ -37,9 +37,9 @@ function modInverse(a: bigint, m: bigint): bigint {
 
 const satchelCryprosystemType = {
     [SatchelCryptosystemType.POWER]: 'CODE_DEGREES',
-    [SatchelCryptosystemType.SIS]: 'CODE_SUPER_INCREASING',
+    [SatchelCryptosystemType.SIS]: 'BACKPACK_CODE_SUPER_INCREASING',
     'CODE_DEGREES': SatchelCryptosystemType.POWER,
-    'CODE_SUPER_INCREASING': SatchelCryptosystemType.SIS
+    'BACKPACK_CODE_SUPER_INCREASING': SatchelCryptosystemType.SIS
 } as const;
 
 export const mapSatchelCryprosystemRequest = (

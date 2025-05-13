@@ -3,9 +3,9 @@ import { EncodingDigitType, GetSatchelCryprosystemParams, SatchelCryprosystem, S
 
 const satchelCryprosystemType = {
     'CODE_DEGREES': SatchelCryptosystemType.POWER,
-    'CODE_SUPER_INCREASING': SatchelCryptosystemType.SIS,
+    'BACKPACK_CODE_SUPER_INCREASING': SatchelCryptosystemType.SIS,
     [SatchelCryptosystemType.POWER]: 'CODE_DEGREES',
-    [SatchelCryptosystemType.SIS]: 'CODE_SUPER_INCREASING'
+    [SatchelCryptosystemType.SIS]: 'BACKPACK_CODE_SUPER_INCREASING'
 } as const
 
 export const map = ({
