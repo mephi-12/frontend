@@ -1,10 +1,12 @@
-import { ElgamalCryptosistemBase, ElgamalCryptosistemTask } from '@shared/api/elgamalCryptosystem/types'
-import React, { useState } from 'react'
+import { ElgamalCryptosistemTask } from '@shared/api/elgamalCryptosystem/types'
+import { useState } from 'react'
 import { SimpleField } from './SimpleField'
-import { useLog } from "@shared/utils/useLog"
+import { useLog } from '@shared/utils/useLog'
+import { submit } from '../models/submit'
 
-export const ESC = ({ task: {data} }: { task: ElgamalCryptosistemTask }) => {
+export const ESC = ({ task: {data, id} }: { task: ElgamalCryptosistemTask }) => {
   const [state, setState] = useState(data)
+  useLog(state)
   return (
     <>
       <h2>Криптосистема Эль-Гамаля</h2>
@@ -77,7 +79,7 @@ export const ESC = ({ task: {data} }: { task: ElgamalCryptosistemTask }) => {
         />
         <br />
         <div className="btn-check">
-          <button>Проверить</button>
+          <button onClick={() => submit(id, state)}>Проверить</button>
         </div>
       </div>
     </>

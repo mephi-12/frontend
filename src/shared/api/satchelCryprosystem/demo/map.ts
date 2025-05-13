@@ -1,16 +1,4 @@
-import { EncodingDigitType, GetSatchelCryprosystemParams, SatchelCryprosystem, SatchelCryptosystemType } from "../types"
-
-export type DTO = {
-    power: number
-    type: 'CODE_SUPER_INCREASING' | 'CODE_DEGREES',
-    message: boolean[],
-    lightBackpack: bigint[],
-    omega: bigint,
-    hardBackpack: bigint[],
-    encodedMessage: bigint,
-    module: bigint,
-    reverseOmega: bigint
-}
+import { EncodingDigitType, GetSatchelCryprosystemParams, SatchelCryprosystem, SatchelCryprosystemServerResponse, SatchelCryptosystemType } from "../types"
 
 
 const satchelCryprosystemType = {
@@ -30,7 +18,7 @@ export const map = ({
     message,
     encodedMessage,
     power
-}: DTO): SatchelCryprosystem => ({
+}: SatchelCryprosystemServerResponse): SatchelCryprosystem => ({
     type: satchelCryprosystemType[type],
     lightBackpack: lightBackpack.map(String),
     heavyBackpack: hardBackpack.map(String),

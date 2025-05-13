@@ -18,6 +18,7 @@ import { AuthPage } from '@pages/auth'
 import { urlByUnitName } from '@shared/config/units'
 import { ChallengePage } from '@pages/challenge'
 import { AboutPage } from '@pages/about'
+import { ResultsPage } from '@pages/results'
 
 export const routes = [
     {
@@ -33,7 +34,7 @@ export const routes = [
         element: AuthPage
     },
     {
-        url: '/challenge/:challengeId',
+        url: '/challenge',
         element: ChallengePage
     },
     {
@@ -75,5 +76,9 @@ export const routes = [
     {
         url: 'about',
         element: AboutPage
+    },
+    {
+        url: 'results',
+        element: ResultsPage
     }
 ] as const

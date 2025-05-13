@@ -1,18 +1,9 @@
 import './styles.scss'
-import { AnimatedText } from '@shared/ui/AnimatedText'
 import { UnitCard } from '@entity/unit'
 import { unitConfigs } from '@shared/config/units'
-import { challengeApi } from '@shared/api/challenge'
-import { use } from '@shared/utils/use'
-import dayjs from 'dayjs'
 import { Link } from 'react-router-dom'
 
-const formatDate = (date: string) => dayjs(date).format('DD-MM HH:mm')
-
 const MenuPage = () => {
-
-  const challenges = use(challengeApi.getChallehges)
-
   return (
     <div className='menu-container'>
       <header>
@@ -26,17 +17,17 @@ const MenuPage = () => {
       </div>
       <div className='tests-container'>
         <h2>
-          Тестирование
+          <Link to={'/challenge'}>
+            Тестирование
+          </Link>
         </h2>
-        <ul className='items'>
-          {challenges && challenges.map(({name, tasksCount, dateEnd, dateStart, id}) => (
-            <Link to={`/challenge/${id}`} className='item'>
-              <h3 className='sec' style={{width: '250px'}}>{name}</h3>
-              <p className='sec'>{formatDate(dateStart)} - {formatDate(dateEnd)}</p>
-              <p className='sec'>{tasksCount} задач(-и)</p>
-            </Link>
-          ))}
-        </ul>
+      </div>
+      <div className='tests-container'>
+        <h2>
+          <Link to={'/results'}>
+            Посмотреть результаты
+          </Link>
+        </h2>
       </div>
     </div>
   )

@@ -45,3 +45,15 @@ export type SatchelCryprosystemTask = {
     data: Partial<SatchelCryprosystemPower | SatchelCryprosystemSIS>
     status: TaskStatus
 } & Entity
+
+export type SatchelCryprosystemServerResponse = {
+    power: number
+    type: 'CODE_SUPER_INCREASING' | 'CODE_DEGREES',
+    message: boolean[],
+    lightBackpack: bigint[],
+    omega: bigint,
+    hardBackpack: bigint[],
+    encodedMessage: bigint,
+    module: bigint,
+    reverseOmega: bigint
+}

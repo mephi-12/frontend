@@ -7,11 +7,13 @@ import { isElgamalCryptosistemTask, isSatchelCryptosystemBackdoorTask, isSatchel
 import { SC } from "./SC"
 import { BSC } from "./BSC"
 import { ESC } from "./ESC"
+import { message } from "antd"
 
 const getTask = (task: Task) => {
+    if (isElgamalCryptosistemTask(task)) return <ESC task={task} />
     if (isSatchelCryptosystemTask(task)) return <SC task={task} />
     if (isSatchelCryptosystemBackdoorTask(task)) return <BSC task={task} />
-    if (isElgamalCryptosistemTask(task)) return <ESC task={task} />
+    void message.error('Не определили тип задания')
 }
 
 const ChallengePage = () => {
@@ -24,7 +26,7 @@ const ChallengePage = () => {
                 <ProgressBar
                     progress={challenge.progress}
                     total={challenge.tasksCount}
-                    labels={['РК', 'Бекдор в РК', 'КС Эльгамаля']}
+                    labels={['КС Эльгамаля', 'РК', 'Бекдор в РК']}
                 />}
             </div>
             <div className="task-container">

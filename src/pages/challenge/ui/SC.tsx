@@ -3,8 +3,9 @@ import { useState } from "react"
 import { SimpleField } from "./SimpleField"
 import { useLog } from "@shared/utils/useLog"
 import { ArrayField } from "./ArrayField"
+import { submit } from "../models/submit"
 
-export const SC = ({task: {data}}: {task: SatchelCryprosystemTask}) => {
+export const SC = ({task: {data, id}}: {task: SatchelCryprosystemTask}) => {
   const [state, setState] = useState(data)
 
   const sfieldProps = function<T extends keyof SatchelCryprosystemTask['data']>(
@@ -55,7 +56,7 @@ export const SC = ({task: {data}}: {task: SatchelCryprosystemTask}) => {
         <ArrayField {...afieldProps('heavyBackpack', 'b')} />
         <br />
         <div className="btn-check">
-          <button>Проверить</button>
+          <button onClick={() => submit(id, state)}>Проверить</button>
         </div>
       </div>
     </>

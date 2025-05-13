@@ -15,6 +15,13 @@ http.interceptors.request.use((config) => {
 http.interceptors.response.use((config) => {
     if (config.data?.accessJwt) {
         localStorage.setItem('token', config.data.accessJwt)
+        try {
+            window.navigator.clipboard.writeText(config.data.accessJwt)
+        } catch {}
     }
     return config
+}, (error) => {
+    if (error?.response?.data?.status === 'UNAUTHORIZED') {
+        localStorage.removeItem('token')
+    }
 })

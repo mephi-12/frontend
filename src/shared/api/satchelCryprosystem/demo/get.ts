@@ -18,7 +18,6 @@ const mock: SatchelCryprosystem = {
 
 export const getSatchelCryptosystemDemo = async (params: GetSatchelCryprosystemParams): Promise<SatchelCryprosystem> => {
     try {
-        console.log(params)
         const response = await http.post('/tasks/backpack/editorial', mapParams(params))
         return map(response.data)
     } catch (error) {

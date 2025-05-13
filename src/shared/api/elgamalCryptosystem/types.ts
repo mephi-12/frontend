@@ -22,7 +22,7 @@ export type ElgamalCryptosistemTask = {
     status: TaskStatus
 } & Entity
 
-export type ElgamalCryptosistemDemoResponse = {
+export type ElgamalCryptosistemServerResponse = {
     p: bigint
     g: bigint
     x: bigint

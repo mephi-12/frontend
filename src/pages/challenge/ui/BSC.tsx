@@ -1,10 +1,10 @@
 import { SatchelCryprosystemBackdoorBase, SatchelCryprosystemBackdoorTask } from '@shared/api/satchelCryprosystemBackdoor/types'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { SimpleField } from './SimpleField'
 import { ArrayField } from './ArrayField'
-import { useLog } from "@shared/utils/useLog"
+import { submit } from '../models/submit'
 
-export const BSC = ({ task: {data} }: { task: SatchelCryprosystemBackdoorTask }) => {
+export const BSC = ({ task: {data, id} }: { task: SatchelCryprosystemBackdoorTask }) => {
   const [state, setState] = useState<Partial<SatchelCryprosystemBackdoorBase>>(data)
   return (
     <>
@@ -100,7 +100,7 @@ export const BSC = ({ task: {data} }: { task: SatchelCryprosystemBackdoorTask })
         />
         <br />
         <div className="btn-check">
-          <button>Проверить</button>
+          <button onClick={() => submit(id, state)}>Проверить</button>
         </div>
       </div>
     </>

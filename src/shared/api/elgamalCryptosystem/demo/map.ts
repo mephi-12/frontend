@@ -1,6 +1,6 @@
-import { ElgamalCryptosistemBase, ElgamalCryptosistemDemoResponse } from "../types";
+import { ElgamalCryptosistemBase, ElgamalCryptosistemServerResponse } from "../types";
 
-export const mapResponse = (data: ElgamalCryptosistemDemoResponse): ElgamalCryptosistemBase => {
+export const mapResponse = (data: ElgamalCryptosistemServerResponse): ElgamalCryptosistemBase => {
     return ({
         prime: String(data.p),
         generator: String(data.g),
